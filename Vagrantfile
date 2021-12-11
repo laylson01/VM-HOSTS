@@ -2,12 +2,17 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.define "destkop1" do |desktop1|
-    desktop1.vm.box = "ubuntu/bionic64"
+  config.vm.define "host1" do |host1|
+    host1.vm.box = "ubuntu/bionic64"
+    host1.vm.network "private_network", ip: "192.168.1.12"
+    config.vm.provision "shell", inline: "sudo apt update && sudo apt install nginx -y"
 
   end
-  config.vm.define "desktop2" do |desktop2|
-    desktop2.vm.box = "debian/buster64"
+  
+  config.vm.define "host2" do |host2|
+    host2.vm.box = "debian/buster64"
+    host2.vm.network "private_network", ip: "192.168.1.13"
+    
   end
 end
 
@@ -21,10 +26,10 @@ end
 
 =begin 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/bionic64"
-  config.vm.provider "virtualbox" do |vb|
+  config.vm.box = "debian/buster64"
+  config.vm.provider "test" do |tst|
     vb.memory = "1024"
-    vb.cpus = "2"
+    vb.cpus = "5"
   end
 end
 =end

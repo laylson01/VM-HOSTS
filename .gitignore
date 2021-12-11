@@ -11,7 +11,7 @@
 /tmp/
 .vagrant
 ubuntu-bionic-18.04-cloudimg-console.log
-
+.Vagrantfie.swp
 # Used by dotenv library to load environment variables.
 # .env
 
