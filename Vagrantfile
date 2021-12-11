@@ -10,7 +10,6 @@ Vagrant.configure("2") do |config|
     desktop2.vm.box = "debian/buster64"
   end
 end
-  
 
 =begin 
 Vagrant.configure("2") do |config|
@@ -21,3 +20,5 @@ Vagrant.configure("2") do |config|
   end
 end
 =end
+dasdad
+dasd
