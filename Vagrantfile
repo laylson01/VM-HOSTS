@@ -1,22 +1,29 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+$script = <<-EOF
+    sudo apt-get update 
+    sudo apt install nginx -y
+
+EOF
+
+
+
 Vagrant.configure("2") do |config|
   config.vm.define "host1" do |host1|
     host1.vm.box = "ubuntu/bionic64"
     host1.vm.network "private_network", ip: "192.168.1.12"
-    config.vm.provision "shell", inline: "sudo apt update && sudo apt install nginx -y"
-
+    config.vm.provision "shell", inline: $script
   end
   
   config.vm.define "host2" do |host2|
     host2.vm.box = "debian/buster64"
     host2.vm.network "private_network", ip: "192.168.1.13"
-    
+    config.vm.provision "shell", inline: "sudo apt update && sudo apt install nginx -y"
+
+
   end
 end
-
-
 
 
 
