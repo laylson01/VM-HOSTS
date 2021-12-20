@@ -9,6 +9,7 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+.vagrant
 ubuntu-bionic-18.04-cloudimg-console.log
 .Vagrantfie.swp
 .vscode
