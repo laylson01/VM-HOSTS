@@ -13,7 +13,7 @@
 ubuntu-bionic-18.04-cloudimg-console.log
 .Vagrantfie.swp
 .vscode
-
+.vagrant
 # Used by dotenv library to load environment variables.
 # .env
 
